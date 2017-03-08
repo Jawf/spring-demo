@@ -19,8 +19,11 @@ public class Application {
     }
 
   public static void main(String[] args) {
+	  //initial Spring IoC container
       ApplicationContext context = 
           new AnnotationConfigApplicationContext(Application.class);
+      
+      //Get Bean from Spring IoC container
       MessagePrinter printer = context.getBean(MessagePrinter.class);
       printer.printMessage();
   }
